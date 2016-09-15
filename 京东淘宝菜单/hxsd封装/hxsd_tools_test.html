@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>子元素over</title>
+<style>
+div{ background:#ccc;width:400px;height:400px; position:absolute}
+h1{height:50px; background:yellow}
+</style>
+<script src="hxsd_tools.js"></script>
+<script>
+
+documentReady(function(){
+	var oBox=document.getElementById('box');
+	hxsd_tools.drag(oBox);
+	
+	hxsd_tools.mouseleave(oBox,function(){
+	console.log('离开了')
+	
+	});
+	hxsd_tools.mouseenter(oBox,function(){
+	console.log('进来了')
+	
+	});
+	
+	
+
+});
+
+
+documentReady(function(){
+	var oP=document.getElementsByTagName('p')[0];
+	var h3=document.createElement('h3');
+	h3.innerHTML='我是h3，插入到了p后面';
+	
+	hxsd_tools.insertAfter(h3, oP);
+
+
+})
+
+</script>
+
+
+</head>
+
+<body>
+<div id="box">
+	<h1>sdfsfdafasdf</h1>
+    <p>afsdf</p>
+    <h5>sdf vasdfads</h5>
+</div>
+</body>
+</html>
